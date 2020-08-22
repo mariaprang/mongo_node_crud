@@ -40,9 +40,13 @@ app.get("/getTodos", (req, res) => {
 });
 
 // UPDATE ROUTE
-app.get("/:id", (req, res) => {
+// update
+app.put("/:id", (req, res) => {
+  // Primary Key of Todo Document we wish to update
   const todoID = req.params.id;
+  // Document used to update
   const userInput = req.body;
+  // Find Document By ID and Update
   db.getDB()
     .collection(collection)
     .findOneAndUpdate(
@@ -50,11 +54,24 @@ app.get("/:id", (req, res) => {
       { $set: { todo: userInput.todo } },
       { returnOriginal: false },
       (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
+        if (err) console.log(err);
+        else {
           res.json(result);
         }
       }
     );
+});
+
+// create route
+app.post("/", (req, res) => {
+  const userInput = req.body;
+  db.getDB()
+    .collection(collection)
+    .insertOne(userInput, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json({ result: result, document: result.ops[0] });
+      }
+    });
 });
