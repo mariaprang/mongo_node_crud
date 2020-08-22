@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 const mongoClient = require("mongodb").MongoClient;
-const objectID = require("mongodb").objectID;
+const ObjectId = require("mongodb").ObjectId;
 
 const dbname = "crud_mongodb";
 
@@ -28,13 +28,12 @@ const connect = (cb) => {
   }
 };
 
-const getPrimaryKey = (_id)=>{
-    return objectID(_id);
-}
+const getPrimaryKey = (_id) => {
+  return ObjectId(_id);
+};
 
 const getDB = () => {
-    return state.db;
-}
+  return state.db;
+};
 
-module.exports = {getDB, connect, getPrimaryKey};
-
+module.exports = { getDB, connect, getPrimaryKey };
