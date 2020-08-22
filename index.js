@@ -75,3 +75,17 @@ app.post("/", (req, res) => {
       }
     });
 });
+
+//delete route
+app.delete("/:id", (req, res) => {
+  const todoID = req.params.id;
+  db.getDB
+    .collection(collection)
+    .findOneAndDelete({ _id: db.getPrimaryKey(todoID) }, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(result);
+      }
+    });
+});
