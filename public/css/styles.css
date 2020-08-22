@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.container {
+  width: 50%;
+  margin: 10% auto;
+  border: 1px solid white;
+}
+
+.headline {
+  color: white;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 3em;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  /* background-image: linear-gradient(rgba(242, 242, 242, 0.1), rgba(70, 67, 67, 0.7)),
+    url("https://images.wallpaperscraft.com/image/polygon_gradient_triangles_129428_2560x1600.jpg");
+      background-color: #2d8659;
+    */
+
+  background-image: url("https://www.xmple.com/wallpaper/gradient-blue-green-linear-1920x1080-c2-1e90ff-00fa9a-a-105-f-14.svg");
+  background-repeat: no-repeat;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}

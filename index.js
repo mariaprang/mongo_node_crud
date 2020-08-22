@@ -19,10 +19,12 @@ db.connect((err) => {
   }
 });
 
-// ROUTING
+// css routing
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+
+app.use(express.static("public"));
 
 // READ ROUTE
 app.get("/getTodos", (req, res) => {
