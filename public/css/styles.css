@@ -27,3 +27,32 @@ body {
   display: flex;
   flex-direction: row;
 }
+input {
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+::placeholder {
+  color: fff;
+}
+
+input[type="text"] {
+  width: 500px;
+  font-family: "Raleway", sans-serif;
+  padding: 2px 5px;
+  font-size: 0.5em;
+  background: transparent;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
