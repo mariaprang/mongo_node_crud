@@ -20,6 +20,7 @@ db.connect((err) => {
 });
 
 // css routing
+// TODO: refactor this
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
